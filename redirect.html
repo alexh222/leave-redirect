@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const action = params.get("action");
+      const row = params.get("row");
+
+      // ✅ Replace with your actual Web App URL
+      const baseScriptUrl = "https://script.google.com/macros/s/AKfycbxdccVx5MeG7X1ippHEXQkbSVJJ9YiHNTEXNQkF9m3dyrpugL-PrJ3K7E396wwTjH23nw/exec";
+
+      if (action && row) {
+        const finalUrl = `${baseScriptUrl}?action=${action}&row=${row}`;
+        window.location.replace(finalUrl);
+      } else {
+        document.body.innerHTML = "<h3>Missing or invalid redirect parameters.</h3>";
+      }
+    })();
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>
